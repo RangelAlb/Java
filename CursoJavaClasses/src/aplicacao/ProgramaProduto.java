@@ -23,6 +23,8 @@ public class ProgramaProduto {
 
 		System.out.println("Quantidade em estoque: ");
 		produto.quantidade = sc.nextInt();
+		
+		System.out.println(produto.toString());
 
 		sc.close();
 
