@@ -12,6 +12,8 @@ public class Construtor {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
+		Produto p = new Produto();
+		
 		System.out.println("Entre com os dados: ");
 		System.out.print("Nome: ");
 		String nome = sc.nextLine();
@@ -19,17 +21,15 @@ public class Construtor {
 		System.out.print("Preço: ");
 		double preco = sc.nextDouble();
 		
-		System.out.print("Quantidade no Estoque: ");
-		int quantidade = sc.nextInt();
 		
-		Produto produto = new Produto(nome, preco, quantidade);
+		Produto produto = new Produto(nome, preco);
 		
 		System.out.println();
 		System.out.println("Dados do Produto: " + produto);
 		System.out.println();
 		
 		System.out.print("Digite o número de produtos pra add no estoque: ");
-		quantidade = sc.nextInt();
+		int quantidade = sc.nextInt();
 		produto.addProduto(quantidade);
 		
 		System.out.println();
