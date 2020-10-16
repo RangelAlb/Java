@@ -12,8 +12,6 @@ public class Construtor {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Produto p = new Produto();
-		
 		System.out.println("Entre com os dados: ");
 		System.out.print("Nome: ");
 		String nome = sc.nextLine();
@@ -23,6 +21,11 @@ public class Construtor {
 		
 		
 		Produto produto = new Produto(nome, preco);
+		
+		produto.setNome("Computer");
+		System.out.println("Atualizar nome: " + produto.getNome());
+		produto.setPreco(1200.00);
+		System.out.println("Atualizar preço: " + produto.getPreco());
 		
 		System.out.println();
 		System.out.println("Dados do Produto: " + produto);

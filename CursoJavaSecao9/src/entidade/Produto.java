@@ -3,9 +3,9 @@ package entidade;
 public class Produto {
 
 	
-	public String nome;
-	public double preco;
-	public int quantidade;
+	private String nome;
+	private double preco;
+	private int quantidade;
 	
 	public Produto() {
 		
@@ -23,6 +23,29 @@ public class Produto {
 		this.preco = preco;
 	}
 	
+	//Getters e Setters
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public double getPreco() {
+		return preco;
+	}
+	
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+	
+	public int getQuantidade() {
+		return quantidade;
+	}
+	
+	//Funções
 	public double totalNoEstoque() {
 	return preco * quantidade;
 	}
