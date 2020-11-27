@@ -8,17 +8,14 @@ public class Heranca {
 
 	public static void main(String[] args) {
 	
-     Conta acc1 = new Conta(1001, "Alex", 1000.0);
-     acc1.saque(200.0);
-     System.out.println(acc1.getSaldo());
-     
-     Conta acc2 = new ContaPoupanca(1002, "Maria", 1000.0, 0.1);
-     acc2.saque(200.0);
-     System.out.println(acc2.getSaldo());
-     
-     Conta acc3 = new ContaDeNegocios(1003, "Bob", 1000.0, 500.0);
-     acc3.saque(200.0);
-     System.out.println(acc3.getSaldo());
+    Conta x = new Conta(1020, "Alex", 1000.0);
+    Conta y = new ContaPoupanca(1023,"Maria", 1000.0, 0.01);
+    
+    x.saque(50.0);
+    y.saque(50.0);
+    
+    System.out.println(x.getSaldo());
+    System.out.println(y.getSaldo());
      
 	}
 
