@@ -34,7 +34,7 @@ public class UI {
 		System.out.print("\033[H\033[2J");
 		System.out.flush();
 	}
-	
+
 	public static XadrezPosicao lerXadrezPosicao(Scanner sc) {
 		try {
 			String s = sc.nextLine();
@@ -50,14 +50,28 @@ public class UI {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((8 - i) + " ");
 			for (int j = 0; j < pecas.length; j++) {
-				imprimirPeca(pecas[i][j]);
+				imprimirPeca(pecas[i][j], false);
 			}
 			System.out.println();
 		}
 		System.out.println("  a b c d e f g h");
 	}
 
-	private static void imprimirPeca(PecaDeXadrez peca) {
+	public static void imprimirTabuleiro(PecaDeXadrez[][] pecas, boolean[][] movimentosPossiveis) {
+		for (int i = 0; i < pecas.length; i++) {
+			System.out.print((8 - i) + " ");
+			for (int j = 0; j < pecas.length; j++) {
+				imprimirPeca(pecas[i][j], movimentosPossiveis[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("  a b c d e f g h");
+	}
+
+	private static void imprimirPeca(PecaDeXadrez peca, boolean fundo) {
+		if (fundo) {
+			System.out.println(ANSI_BLUE_BACKGROUND);
+		}
 		if (peca == null) {
 			System.out.println("-");
 		} else {
