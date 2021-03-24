@@ -7,13 +7,8 @@ public class Programa2 {
 	public static void main(String[] args) {
 
 		String caminho = "C:\\temp\\in.txt";
-		FileReader fr = null;
-		BufferedReader br = null;
 
-		try {
-			fr = new FileReader(caminho);
-			br = new BufferedReader(fr);
-
+		try (BufferedReader br = new BufferedReader(new FileReader(caminho))) {
 			String linha = br.readLine();
 
 			while (linha != null) {
@@ -25,18 +20,6 @@ public class Programa2 {
 			System.out.println("Error: " + e.getMessage());
 		}
 
-		finally {
-			try {
-				if (br != null) {
-					br.close();
-				}
-				if (fr != null) {
-					fr.close();
-				}
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 
 }
